@@ -1,0 +1,432 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #8fbaeb;
+}
+
+.container{
+    display: grid;
+
+    /* colunas */
+    grid-template-columns: 1fr 1fr 1fr;
+
+    /* linhas */
+    grid-template-rows: auto auto auto;
+
+    /* áreas */
+    grid-template-areas:
+    "menu menu menu"
+    "banner banner banner"
+    "produtos produtos produtos";
+
+    min-height: 100vh;
+}
+
+/* MENU */
+nav{
+    grid-area: menu;
+    background: #003b8e;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav h1{
+    font-size: 28px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul, li, a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* TELA INICIAL */
+.banner{
+    grid-area: banner;
+    text-align: center;
+    padding: 40px;
+}
+
+.banner img{
+    width: 250px;
+}
+
+/* GRID DOS PRODUTOS */
+.produtos{
+    grid-area: produtos;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+
+    gap: 20px;
+    padding: 30px;
+}
+
+.card{
+    background: rgb(252, 250, 250);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    
+    
+}
+
+.card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition:0.3s;
+}
+
+button{
+    background: #003b8e;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* LOGIN */
+.login-conteiner{
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+
+    width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border-radius: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* INPUTS DO LOGIN */
+.login-container input{
+    padding: 12px;
+    margin: 10px 0;
+    background: #e8e6ff;
+    border: none;
+    border-radius: 20px;
+}
+
+/* LOGO LOGIN */
+.login-container img{
+    width: 180px;
+    margin: auto;
+}
+
+/* BOTÃO DO LOGIN */
+.login-container button{
+    background: #003b8e;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* CARRINHO */
+.carrinho{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+
+    gap: 20px;
+    padding: 40px;
+}
+
+.estilos{
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+
+    gap: 20px;
+    padding: 30px;
+    
+}
+
+/* BOTÂO DE VOLTAR */
+.voltar{
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background: #003b8e;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* HOVER DO BOTÃO DE VOLTAR */
+.voltar:hover{
+    background: #001f5c;
+}
+
+/* BOTÕES DO LOGIN */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #1e90ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sobre{
+    text-align: center;
+    padding: 40px;
+}
+
+.sobre img{
+    width: 250px;
+    margin: 20px;
+}
+
+.sobre p{
+    max-width: 700px;
+    margin: 15px auto;
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+.creditos{
+    font-weight: bold;
+    text-align: center;
+    color: gold;
+}
+
+.text{
+    color:black;
+
+}
+.parag{
+    color:#333333;
+}
+/* Banner Superior */
+        .banner-casual {
+            background-color: #7293e4; /* Cor azul do fundo */
+    color: #0b1a4a;            /* Cor escura do texto */
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    /* Cria o formato oval (elipse) */
+    width: 300px;
+    height: 80px;
+    border-radius: 50%;
+    
+    /* Centraliza o texto perfeitamente dentro do oval */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto
+        }
+
+        /* Container dos Produtos com CSS Grid */
+        .produtos-container {
+            display: grid;
+            /* Cria 3 colunas de tamanho igual com limite de 260px */
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content:center;
+            gap: 50px;
+            width: 100%;
+            
+            
+        }
+
+        /* Card de Produto */
+        .produto-card {
+           display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border: 4px solid #ffffff; 
+    border-radius: 15px;
+     width: auto;           /* Define a largura exata da imagem */
+    height: auto;           /* Mantém a proporção original para não distorcer */
+   margin-left: 50px; /* Empurra a imagem para o centro (esquerda) */
+  margin-right: 50px; /* Empurra a imagem para o centro (direita) */
+  margin-top: 65px;
+ 
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1.1;
+            background-color: #fff;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Botão Adicionar ao Carrinho */
+        .btn-carrinho {
+            position: absolute;
+            bottom: 12px;
+            left: 5%;
+            width: 90%;
+            background-color: #1a42ca;
+            color: white;
+            border: none;
+            padding: 10px 0;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-carrinho:hover {
+            background-color: #112d8a;
+        }
+
+        /* Preço */
+        .preco {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Botão Voltar */
+        .btn-voltar {
+               position: absolute;
+            bottom: 20px;
+            
+            background-color: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 6px 20px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor:pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .btn-voltar:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Responsividade para telas menores (Celular) */
+        @media (max-width: 900px) {
+            .produtos-container {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+        }
+
+        .Comprar {
+            color: black;
+            background-color: aquamarine;
+            border-radius: 50px;
+            border-style: dotted;
+            box-shadow: #1a42ca;
+        }
+
+        .checkout-container{
+    max-width:600px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.checkout-container h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.checkout-container h2{
+    margin-top:20px;
+    color:#003366;
+}
+
+.checkout-container input,
+.checkout-container select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.btn-comprar{
+    background:#0066ff;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-finalizar{
+    width:100%;
+    padding:15px;
+    margin-top:20px;
+    background:#00a651;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+}
+
+.btn-finalizar:hover{
+    background:#008a45;
+}

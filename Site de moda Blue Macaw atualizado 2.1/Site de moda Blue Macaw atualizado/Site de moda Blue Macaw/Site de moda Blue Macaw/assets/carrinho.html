@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a href="index.html" class="voltar">Voltar</a>
+
+    <nav>
+        <h1>Blue Macaw</h1>
+    </nav>
+
+    <div class="carrinho">
+        <h2>Seu Carrinho</h2>
+
+        <div id="itensCarrinho"></div>
+
+        <h3 id="total"></h3>
+
+        <button onclick="limparCarrinho()">
+            Limpar Carrinho
+        </button>
+<button onclick="window.location.href='pagamento.html'" class="btn-comprar">
+    Comprar
+</button>
+
+    </div>
+
+    <script>
+
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        let area = document.getElementById("itensCarrinho");
+        let total = 0;
+
+        if (carrinho.length === 0) {
+
+            area.innerHTML = "<p>Seu carrinho está vazio.</p>";
+
+        } else {
+
+            carrinho.forEach(produto => {
+
+                area.innerHTML += `
+                    <div class="card">
+                        <img src="${produto.imagem}" 
+                             alt="${produto.nome}" 
+                             width="200">
+
+                        <h3>${produto.nome}</h3>
+
+                        <p>R$ ${Number(produto.preco).toFixed(2)}</p>
+                    </div>
+                `;
+
+                total += Number(produto.preco);
+            });
+
+            document.getElementById("total").innerHTML =
+                "Total: R$ " + total.toFixed(2);
+        }
+
+        function limparCarrinho() {
+            localStorage.removeItem("carrinho");
+            location.reload();
+        }
+
+    
+
+
+    </script>
+
+</body>
+</html>
